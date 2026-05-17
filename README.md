@@ -1,463 +1,217 @@
 # 📰 Newspaper Style Article Page
 
-> A Times of India inspired newspaper layout built with **pure HTML5 & CSS3** — no JavaScript, no frameworks.
-
-![screenshot](screenshot.png)
+> A pixel-perfect, Times of India inspired newspaper layout — crafted entirely with **pure HTML5 & CSS3**.  
+> No JavaScript. No frameworks. No shortcuts. Just clean, handwritten code.
+---
 
 ## 🔴 Live Demo
 👉 [Click here to view the live project](https://suryaprakash9199.github.io/newspaper-style-article-page)
 
 ---
 
-## 📁 Project Structure
+## 💡 About This Project
+
+This project is a hands-on demonstration of core CSS concepts applied to a real-world design challenge — replicating the layout and feel of a professional newspaper website.
+
+The goal was simple: **build something that looks like it was made by a developer who actually understands CSS** — not someone who just copied Stack Overflow.
+
+Every element — the centered logo, the drop caps, the 3-column layout, the hover animations — was intentionally placed using specific CSS techniques, not luck.
+
+---
+
+## 📁 File Structure
 
 ```
 newspaper-style-article-page/
-├── index.html                        ← Main HTML file
-├── newspaper-style-artical-page.css  ← All CSS styles
-├── screenshot.png                    ← Project screenshot
-└── README.md                         ← You are here
+├── newspaper-style-artical-page.html   ← Main HTML structure
+├── newspaper-style-artical-page.css    ← All styling
+├── Screenshot 2026-05-17 144217.png    ← Project screenshot 1
+├── Screenshot 2026-05-17 144335.png    ← Project screenshot 2
+└── README.md                           ← Project documentation
 ```
 
 ---
 
-## ✨ Features
+## ✨ Key Features
 
-- 3-column newspaper layout using `display: inline-block`
-- Drop cap effect using `::first-letter` pseudo-element
-- Custom text selection color using `::selection`
-- Hover animations on navigation buttons
-- Centered logo using `position: absolute` + `transform: translateX(-50%)`
-- Image text wrapping using `float: left`
-- Google Fonts — Playfair Display & Lora
-- Fully built with semantic HTML5 tags
-
----
-
-## 🧱 HTML — Tags Used
-
-### Structure Tags
-
-| Tag | Purpose | Where Used |
-|-----|---------|------------|
-| `<html>` | Root element of the page | Wraps entire document |
-| `<head>` | Contains metadata, links | CSS link, Google Fonts, title |
-| `<body>` | Visible page content | All visible elements |
-| `<title>` | Browser tab title | `<title>newspaper</title>` |
-
-### Linking External Resources
-
-```html
-<!-- Google Fonts link in <head> -->
-<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700&family=Lora&display=swap" rel="stylesheet">
-
-<!-- External CSS file link -->
-<link rel="stylesheet" href="newspaper-style-artical-page.css">
-```
-
-### Heading Tags
-
-| Tag | Size | Where Used |
-|-----|------|------------|
-| `<h1>` | Largest | "TIMES OF INDIA" logo |
-| `<h3>` | Medium | Date and author name |
-| `<h4>` | Small | Article main heading |
-
-```html
-<h1 class="logo">TIMES OF INDIA</h1>
-<h3 class="date">Sunday, 17 may 2026</h3>
-<h4>Maharashtra government gets cold feet...</h4>
-```
-
-### Layout & Grouping Tags
-
-| Tag | Purpose | Where Used |
-|-----|---------|------------|
-| `<header>` | Top section of page | Logo + sign in/subscribe |
-| `<div>` | Group elements | Navigation, columns, footer |
-| `<hr>` | Horizontal rule / divider line | Between header sections |
-| `<p>` | Paragraph text | Article content |
-
-```html
-<header class="main-header">
-  <h1 class="logo">TIMES OF INDIA</h1>
-  <div id="seventh">
-    <a href="..." class="nav-btn">sign in</a>
-    <a href="..." class="nav-btn">subscribe</a>
-  </div>
-</header>
-```
-
-### Interactive / Navigation Tags
-
-| Tag | Purpose | Where Used |
-|-----|---------|------------|
-| `<a>` | Hyperlink | Nav links, sign in, subscribe |
-| `<button>` | Clickable button | Navigation menu, footer |
-| `<img>` | Image | Uber image in article |
-
-```html
-<!-- Button wrapping a link -->
-<button>
-  <a href="https://indianexpress.com/">Home</a>
-</button>
-
-<!-- Image with float -->
-<img src="uber.png" alt="uber" width="150" height="150">
-
-<!-- Anchor as styled button -->
-<a href="..." class="nav-btn">sign in</a>
-```
-
-### Text Formatting
-
-| Tag | Effect | Where Used |
-|-----|--------|------------|
-| `<br>` | Line break | Inside article heading paragraph |
+- **3-Column Newspaper Layout** — built using `display: inline-block` and `vertical-align`, replicating how real newspaper columns work
+- **Drop Cap Effect** — `::first-letter` pseudo-element creates the classic large first letter seen in editorial writing
+- **Custom Text Selection** — `::selection` changes highlight color to match the brand theme
+- **First Line Styling** — `::first-line` makes the opening line of every article bold and italic
+- **Perfectly Centered Logo** — achieved using `position: absolute` combined with `transform: translateX(-50%)` — a professional centering technique
+- **Image Text Wrapping** — `float: left` makes the Uber image sit naturally inside the article text
+- **Smooth Hover Animations** — buttons lift upward with `transform: translateY()` and `transition` for a polished feel
+- **Pill-shaped Navigation** — `border-radius: 50px` gives the nav buttons a modern rounded look
+- **Google Fonts Integration** — Playfair Display for headings, Lora for body — both chosen to match newspaper typography
+- **CSS Reset** — universal selector resets all browser defaults for consistent cross-browser rendering
 
 ---
 
-## 🎨 CSS — Properties & Concepts Used
+## 🧱 HTML Concepts Used
 
-### 1. Pseudo-Elements
-
-```css
-/* Drop cap — big first letter of every paragraph */
-p::first-letter {
-  font-size: 3em;
-  font-weight: bold;
-  float: left;
-  line-height: 1;
-  margin-right: 6px;
-  color: #c0392b;
-}
-
-/* First line — bold + italic */
-p::first-line {
-  font-weight: bold;
-  font-style: italic;
-}
-
-/* Custom text selection highlight */
-::selection {
-  background: #c0392b;
-  color: white;
-}
-```
-
-**Theory:**
-- `::first-letter` — targets only the very first character of an element
-- `::first-line` — targets the entire first line (depends on screen width)
-- `::selection` — styles the highlighted/selected text
+| Concept | Theory |
+|---------|--------|
+| Semantic Structure | `<header>`, `<div>`, `<p>`, `<hr>` used meaningfully to define page sections |
+| Heading Hierarchy | `<h1>` for logo, `<h3>` for date/author, `<h4>` for article heading — correct heading order maintained |
+| Hyperlinks | `<a>` tags connect to real Indian Express pages for Home, World, India, Business, etc. |
+| Buttons | `<button>` wraps navigation links with custom styling |
+| External Resources | Google Fonts and CSS file linked via `<link rel="stylesheet">` in `<head>` |
+| Image Embedding | `<img>` with `alt`, `width`, `height` attributes — accessibility and layout both considered |
+| Inline Text | `<br>` used for controlled line breaks inside paragraphs |
 
 ---
 
-### 2. Pseudo-Classes
+## 🎨 CSS Concepts Used
 
-```css
-/* Button hover effect */
-button:hover {
-  background-color: yellow;
-  color: red;
-  box-shadow: 10px 10px 10px rgba(220, 4, 11, 0.3);
-  transform: translateY(-5px);
-}
+### Pseudo-Elements
+These target specific parts of elements without adding extra HTML tags.
 
-/* Nav button hover */
-.nav-btn:hover {
-  transform: translateY(-3px);
-}
-
-/* Link hover */
-a:hover {
-  color: red;
-}
-```
-
-**Theory:**
-- `:hover` — triggers when mouse is over an element
-- `:active` — triggers when element is being clicked
-- `:checked` — for checkboxes/radio buttons (not used here but related)
+| Pseudo-Element | What It Does Here |
+|---------------|-------------------|
+| `::first-letter` | Creates the large red drop cap on paragraph openings |
+| `::first-line` | Makes the first line of every paragraph bold and italic |
+| `::selection` | Changes the highlight color to red + white when user selects text |
 
 ---
 
-### 3. Box Model
+### Pseudo-Classes
+These apply styles based on user interaction or element state.
 
-```css
-/* Padding — space inside element */
-button {
-  padding: 10px 20px;  /* top-bottom: 10px, left-right: 20px */
-}
-
-/* Margin — space outside element */
-img {
-  margin-right: 15px;
-  margin-bottom: 5px;
-}
-
-/* Border */
-#first {
-  border-right: 5px solid black;  /* column separator */
-}
-
-/* Box sizing */
-* {
-  box-sizing: border-box;  /* padding included in width calculation */
-}
-```
-
-**Box Shadow:**
-```css
-button:hover {
-  box-shadow: 10px 10px 10px rgba(220, 4, 11, 0.3);
-  /* offset-x | offset-y | blur | color */
-}
-```
+| Pseudo-Class | What It Does Here |
+|-------------|-------------------|
+| `:hover` | Buttons change color, lift up, and glow when mouse hovers |
+| `a:hover` | Navigation links turn red when hovered |
 
 ---
 
-### 4. Display & Layout
+### Box Model
+Every element in CSS is a box. This project uses all four parts of the box model.
 
-```css
-/* Flexbox — for header alignment */
-.main-header {
-  display: flex;
-  align-items: center;
-  padding: 10px 20px;
-}
-
-/* Inline-block — 3 column newspaper layout */
-#first, #second, #third {
-  display: inline-block;
-  width: 400px;
-  height: 200px;
-  vertical-align: top;
-}
-
-/* Flex for sign-in/subscribe row */
-#seventh {
-  display: flex;
-  gap: 15px;
-}
-```
-
-**Theory:**
-- `display: block` — takes full width, new line
-- `display: inline` — stays in same line, no width/height
-- `display: inline-block` — stays in same line but accepts width/height ✅ used here
-- `display: flex` — modern layout, aligns children in row/column
-- `display: none` — hides element completely
+| Property | Where Used |
+|----------|-----------|
+| `padding` | Inside spacing for buttons and nav items |
+| `margin` | Gap between image and text, between elements |
+| `border` | `border-right` creates the vertical column dividers |
+| `box-sizing: border-box` | Ensures padding does not break the column widths |
+| `box-shadow` | Red glow shadow appears on button hover |
 
 ---
 
-### 5. Positioning
+### Display & Layout
 
-```css
-/* Centering logo absolutely */
-.logo {
-  position: absolute;
-  left: 50%;
-  transform: translateX(-50%);
-}
-
-/* Parent must be relative for absolute child to work */
-.main-header {
-  position: relative;
-}
-
-/* Centering date */
-.date {
-  position: absolute;
-  left: 50%;
-  transform: translateX(-50%);
-}
-
-/* Push author to right */
-.author {
-  margin-left: auto;
-}
-```
-
-**Theory:**
-- `position: static` — default, normal flow
-- `position: relative` — shifted from its normal position, acts as anchor for absolute children
-- `position: absolute` — removed from flow, positioned relative to nearest `relative` parent
-- `position: fixed` — stays fixed on screen while scrolling
+| Property | What It Does Here |
+|----------|-------------------|
+| `display: inline-block` | Creates the 3-column newspaper layout |
+| `display: flex` | Aligns header items (logo, sign in, subscribe) in a row |
+| `vertical-align: top` | Keeps all 3 columns aligned from the top |
+| `gap` | Adds space between flex items in the header |
+| `margin-left: auto` | Pushes the author name to the far right |
 
 ---
 
-### 6. CSS Transform
+### Positioning
 
-```css
-/* Move element upward on hover */
-button:hover {
-  transform: translateY(-5px);
-}
-
-/* Center element horizontally */
-.logo {
-  transform: translateX(-50%);
-}
-```
-
-**Theory — Transform functions:**
-| Function | What it does |
-|----------|-------------|
-| `translateX(n)` | Move horizontally |
-| `translateY(n)` | Move vertically |
-| `rotate(deg)` | Rotate element |
-| `scale(n)` | Resize element |
-| `skew(deg)` | Slant/tilt element |
+| Property | Where Used |
+|----------|-----------|
+| `position: relative` | Set on header so absolute children position relative to it |
+| `position: absolute` | Used on logo and date to center them precisely |
+| `left: 50%` + `transform: translateX(-50%)` | The correct professional technique to center any element |
+| `z-index: 1` | Keeps the sign-in buttons above the absolute logo |
 
 ---
 
-### 7. CSS Transition
+### CSS Transform
 
-```css
-.nav-btn {
-  transition: transform 0.2s ease;
-}
-
-/* This means: animate 'transform' over 0.2 seconds with ease timing */
-```
-
-**Theory:**
-```css
-transition: property duration timing-function delay;
-/* Example */
-transition: all 0.3s ease-in-out 0s;
-```
-
-| Timing | Effect |
-|--------|--------|
-| `ease` | Slow start, fast middle, slow end |
-| `linear` | Same speed throughout |
-| `ease-in` | Starts slow |
-| `ease-out` | Ends slow |
+| Function | Where Used |
+|----------|-----------|
+| `translateX(-50%)` | Horizontal centering of logo and date |
+| `translateY(-5px)` | Buttons lift upward on hover |
 
 ---
 
-### 8. Typography & Fonts
+### CSS Transition
 
-```css
-/* Google Fonts imported in HTML <head> */
-body {
-  font-family: 'Georgia', serif;
-  font-size: 16px;
-  line-height: 1.7;
-  color: #111;
-}
+Smooth animation is added to button hover effects. Without transition, the hover change is instant and jarring. With transition, it feels smooth and professional.
 
-h1, h2 {
-  font-family: 'Times New Roman', serif;
-}
-
-h1 {
-  font-size: 50px;
-  text-align: center;
-  color: red;
-}
-
-h4 {
-  font-size: 30px;
-  font-style: italic;
-}
-```
+| Property | Value | Effect |
+|----------|-------|--------|
+| `transition` | `transform 0.2s ease` | Nav buttons smoothly lift on hover |
 
 ---
 
-### 9. Colors & Backgrounds
+### Float
 
-```css
-/* Solid color */
-button {
-  background-color: rgba(31, 29, 29, 0.767);
-  color: white;
-}
-
-/* Semi-transparent using rgba */
-box-shadow: 10px 10px 10px rgba(220, 4, 11, 0.3);
-/* rgba(red, green, blue, opacity) — opacity 0=transparent, 1=solid */
-
-/* Hex color */
-color: #c0392b;
-```
+| Property | Where Used |
+|----------|-----------|
+| `float: left` | Uber image floats left so article text naturally wraps around it |
+| `float: left` on `::first-letter` | Drop cap letter sits to the left while text flows beside it |
 
 ---
 
-### 10. Float
+### Typography
 
-```css
-/* Image floats left, text wraps around it */
-img {
-  float: left;
-  margin-right: 15px;
-  margin-bottom: 5px;
-}
-
-/* Drop cap also uses float */
-p::first-letter {
-  float: left;
-}
-```
-
-**Theory:**
-- `float: left` — element moves to left, others wrap around it
-- `float: right` — element moves to right
-- Used for: image + text wrapping, drop caps
+| Property | Where Used |
+|----------|-----------|
+| `font-family` | Georgia/serif for body, Times New Roman for headings, Playfair Display + Lora from Google Fonts |
+| `font-size` | 50px logo, 30px article heading, 20px body text |
+| `font-style: italic` | Article main heading styled italic |
+| `font-weight: bold` | Drop cap and first-line emphasis |
+| `text-align: center` | Logo and navigation centered |
+| `line-height` | Controls spacing between lines of text |
+| `text-decoration` | Underline on sign in / subscribe buttons |
 
 ---
 
-### 11. Border Radius
+### Colors & Transparency
 
-```css
-/* Pill-shaped buttons */
-button {
-  border-radius: 50px;
-}
-
-/* Slightly rounded nav buttons */
-.nav-btn {
-  border-radius: 5px;
-}
-```
+| Format | Where Used |
+|--------|-----------|
+| Named colors — `red`, `white`, `black` | Logo, link colors |
+| Hex — `#c0392b`, `#555` | Drop cap red, border colors |
+| RGBA — `rgba(220, 4, 11, 0.3)` | Semi-transparent red glow on box-shadow |
 
 ---
 
-### 12. Universal Selector & Reset
+### Border & Border Radius
 
-```css
-/* Removes default browser spacing from ALL elements */
-* {
-  margin: 0;
-  padding: 0;
-  box-sizing: border-box;
-}
-```
-
-**Theory:** Every browser adds default margin/padding to elements. This resets them so your design looks same on all browsers.
+| Property | Where Used |
+|----------|-----------|
+| `border-right: 5px solid black` | Creates vertical dividers between the 3 columns |
+| `border-radius: 50px` | Pill-shaped navigation buttons |
+| `border-radius: 5px` | Slightly rounded sign-in/subscribe buttons |
+| `border: 2px solid #555` | Outline on nav buttons |
 
 ---
 
-## 🔧 CSS Concepts Summary Table
+## 📊 Complete CSS Properties Summary Table
 
-| Concept | Property Used | Effect |
-|---------|--------------|--------|
-| Pseudo-element | `::first-letter` | Drop cap |
-| Pseudo-element | `::first-line` | Bold italic first line |
-| Pseudo-element | `::selection` | Red highlight on select |
-| Pseudo-class | `:hover` | Button lift + color change |
-| Box Model | `padding`, `margin`, `border` | Spacing and columns |
-| Box Shadow | `box-shadow` | Shadow on hover |
-| Display | `inline-block` | 3-column layout |
-| Display | `flex` | Header alignment |
-| Position | `absolute` + `relative` | Centered logo |
-| Transform | `translateX`, `translateY` | Center + hover lift |
-| Transition | `transition: transform 0.2s` | Smooth animation |
-| Float | `float: left` | Image text wrap |
-| Border Radius | `border-radius: 50px` | Pill buttons |
-| Typography | `font-family`, `font-size` | Google Fonts |
-| Color | `rgba()`, `#hex` | Transparent shadow |
+| Category | Properties Used |
+|----------|----------------|
+| Pseudo-Elements | `::first-letter`, `::first-line`, `::selection` |
+| Pseudo-Classes | `:hover` |
+| Box Model | `margin`, `padding`, `border`, `box-shadow`, `box-sizing` |
+| Display | `inline-block`, `flex` |
+| Positioning | `relative`, `absolute`, `z-index` |
+| Transform | `translateX()`, `translateY()` |
+| Transition | `transition`, `ease` timing function |
+| Float | `float: left` |
+| Typography | `font-family`, `font-size`, `font-style`, `font-weight`, `text-align`, `line-height` |
+| Colors | Hex, RGBA, named colors |
+| Borders | `border`, `border-right`, `border-radius` |
+| Layout | `width`, `height`, `vertical-align`, `gap`, `margin-left: auto` |
+| Reset | Universal selector `*` with margin, padding, box-sizing |
+
+---
+
+## 🧠 What I Learned Building This
+
+- How real newspaper column layouts work without CSS Grid
+- Why `position: absolute` + `transform: translateX(-50%)` is the right way to center an element
+- How `::first-letter` and `::first-line` give editorial-style polish without extra HTML
+- How `float` was used for layouts before Flexbox — and still works perfectly for image wrapping
+- How `box-sizing: border-box` prevents columns from breaking when padding is added
+- How `rgba()` enables transparent colors for subtle effects like shadows
+- How Google Fonts are loaded via `<link>` in `<head>` and applied in CSS
 
 ---
 
@@ -465,19 +219,7 @@ button {
 
 **Surya Prakash**
 - GitHub: [@SURYAPRAKASH9199](https://github.com/SURYAPRAKASH9199)
-- Project created: May 17, 2026
 
 ---
 
-## 📌 What I Learned
-
-- How to build multi-column layouts without CSS Grid or Flexbox using `inline-block`
-- How `::first-letter` creates drop caps like real newspapers
-- How `position: absolute` + `transform: translateX(-50%)` perfectly centers an element
-- How `float` allows text to wrap around images
-- How pseudo-classes like `:hover` create interactive animations
-- How Google Fonts are imported and applied
-
----
-
-*Built with ❤️ using only HTML5 and CSS3*
+*Built with ❤️ using only HTML5 and CSS3 — May 2026*
